@@ -40,9 +40,9 @@ namespace Repository.Repository
             return await DbSet.ToListAsync();
         }
 
-        public virtual async Task Remover(Guid id)
+        public virtual async Task Remover(TEntity entity)
         {
-            DbSet.Remove(new TEntity { Id = id });
+            DbSet.Remove(entity);
             await SaveChanges();
         }
 

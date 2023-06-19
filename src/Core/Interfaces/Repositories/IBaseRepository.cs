@@ -8,7 +8,7 @@ namespace Core.Interfaces.Repositories
         Task<TEntity?> Obter(Guid id);
         Task<IEnumerable<TEntity>> Obter();
         Task Atualizar(TEntity entity);
-        Task Remover(Guid id);
+        Task Remover(TEntity entity);
         Task<int> SaveChanges();
     }
 }
