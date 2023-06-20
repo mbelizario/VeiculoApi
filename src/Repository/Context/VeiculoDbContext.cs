@@ -14,7 +14,7 @@ namespace Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(VeiculoDbContext).Assembly);
-            modelBuilder.Entity<Entidade>().HasQueryFilter(f => !f.Excluido);
+            modelBuilder.AplicarExclusaoLogica();
 
             base.OnModelCreating(modelBuilder);
         }
