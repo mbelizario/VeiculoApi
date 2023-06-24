@@ -22,7 +22,10 @@ namespace Service
 
         public async Task<Marca?> Obter(Guid id) => await _marcaRepository.Obter(id);
 
-        public async Task Atualizar(Marca marca) => await _marcaRepository.Atualizar(marca);
+        public async Task Atualizar(Marca marca)
+        {   
+            await _marcaRepository.Atualizar(marca);
+        }
 
         public async Task Remover(Guid id)
         {

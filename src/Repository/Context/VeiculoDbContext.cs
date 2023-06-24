@@ -58,6 +58,9 @@ namespace Repository.Context
                         case EntityState.Added:
                             registro.ConfigurarNovoRegistro();
                             break;
+                        case EntityState.Modified:
+                            registro.ConfigurarAtualizacao();
+                            break;
                     }
                 }
             }
