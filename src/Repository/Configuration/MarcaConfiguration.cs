@@ -10,6 +10,8 @@ namespace Repository.Configuration
         {
             builder.HasKey(x => x.Id);
 
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
+
             builder.Property(x => x.Nome)
                 .IsRequired()
                 .HasColumnType("varchar(80)");

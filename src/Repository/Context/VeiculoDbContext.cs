@@ -27,7 +27,6 @@ namespace Repository.Context
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
-            TratarDados();
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
@@ -39,7 +38,6 @@ namespace Repository.Context
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
         {
-            TratarDados();
             return base.SaveChanges(acceptAllChangesOnSuccess);
         }
 

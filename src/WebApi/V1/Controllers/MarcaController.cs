@@ -12,13 +12,11 @@ namespace WebApi.V1.Controllers
     {
         private readonly IMarcaService _marcaService;
         private readonly IMapper _mapper;
-        private readonly INotificador _notificador;
 
         public MarcaController(IMarcaService marcaService, IMapper mapper, INotificador notificador) : base(notificador)
         {
             _marcaService = marcaService;
             _mapper = mapper;
-            _notificador = notificador;
         }
 
         [HttpGet]
@@ -38,8 +36,9 @@ namespace WebApi.V1.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Adicionar(MarcaViewModel marcaViewModel)
+        public async Task<ActionResult> Adicionar(string nome)
         {
+            var marcaViewModel = new MarcaViewModel() { Nome = nome };
             var marca = _mapper.Map<Marca>(marcaViewModel);
             await _marcaService.Adicionar(marca);
             return ObterRespostaPersonalizada();
