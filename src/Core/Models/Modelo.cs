@@ -4,6 +4,8 @@
     {
         public string Nome { get; set; } = string.Empty;
 
-        public int MarcaId { get; set; }
+        public Guid MarcaId { get; set; }
+
+        public Marca Marca { get; set; } = new Marca();
     }
 }
